@@ -1,24 +1,26 @@
-package com.greatlearning.employeemanagement.model;
+package com.greatlearning.employeemanagement.config;
+
+import java.util.Collection;
+import java.util.List;
 
 
 import static java.util.stream.Collectors.toSet;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.greatlearning.employeemanagement.model.Role;
+import com.greatlearning.employeemanagement.model.User;
 
-public class DomainUserDetails implements UserDetails {
+public class SecurityDetails implements UserDetails {
 	User user;
-	public DomainUserDetails(User user) {
+	public SecurityDetails(User user) {
 		super();
 		this.user = user;
 	}
-
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<Role> roles = user.getRoles();
@@ -38,33 +40,33 @@ public class DomainUserDetails implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		System.out.println("User :: "+ this.user.getUsername());
 		return this.user.getUsername();
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
-		System.out.println("User47 :: ");
+		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		System.out.println("User 53:: ");
+		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		System.out.println("User 59:: ");
+		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		System.out.println("User65 :: ");
+		// TODO Auto-generated method stub
 		return true;
 	}
 
 }
+
 

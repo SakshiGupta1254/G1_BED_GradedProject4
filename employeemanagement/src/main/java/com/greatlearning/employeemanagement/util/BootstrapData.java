@@ -21,13 +21,13 @@ public class BootstrapData {
 //		User Sakshi = new User("Sakshi","welcome","sakshigupta@gmail.com");
 //		User John = new User("John","welcome","John@gmail.com");
 //		
-//		Role userRole = new Role("ROLE_USER");
-//		Role adminRole = new Role("ROLE_ADMIN");
-//		
-//		John.addRole(userRole);
+//		Role userRole = new Role("USER");
+//		Role adminRole = new Role("ADMIN");
+		
+//		John.add(userRole);
 //		Sakshi.addRole(adminRole);
 //		Sakshi.addRole(userRole);
-//		
+		
 //		this.userRepository.save(John);
 //		this.userRepository.save(Sakshi);
 	}

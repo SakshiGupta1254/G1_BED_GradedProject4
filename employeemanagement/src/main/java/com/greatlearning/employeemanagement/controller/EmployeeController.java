@@ -28,21 +28,21 @@ public class EmployeeController {
 	 *  /employees  POST
 	 */
 	
-	@GetMapping("/employees")
+	@RequestMapping("/employees")
 	public String getAllEmployees(Model model) {
 		List<Employee> result = service.getAllEmployees();
 		model.addAttribute("employees", result);
 		return "employees";
 	}
 	
-	@GetMapping("/employees/new")
+	@RequestMapping("/employees/new")
 	public String addNewEmployee(Model model) {
 		Employee result = new Employee();
 		model.addAttribute("employee", result);
 		return "create_employee";
 	}
 	
-	@GetMapping("/employees/edit/{id}")
+	@RequestMapping("/employees/edit/{id}")
 	public String UpdateEmployee(Model model, @PathVariable("id") int id) {
 		Employee result = service.getEmployeeById(id);
 		model.addAttribute("employee", result);
